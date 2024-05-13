@@ -1,0 +1,38 @@
+<div class="task-details">
+    <div  class="">
+        <form [formGroup]="taskForm" (submit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-12 row form-group ">
+                    <label class="col-md-4" for="task-name">
+                        Task Name
+                    </label>
+                    <input class="col-md-6 form-control" id="task-name" formControlName="taskName" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 row form-group ">
+                    <label class="col-md-4" for="task-status">
+                        Task status
+                    </label>
+                    <select class="col-md-6 form-control" id="task-status" formControlName="taskStatus">
+                        <option [value]="'todo'">
+                            Todo
+                        </option>
+                        <option [value]="'in progress'">
+                            In progress
+                        </option>
+                        <option [value]="'done'">
+                            Done
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn-group" role="group">
+                <button *ngIf="id" class="btn btn-primary" type="submit"> Update</button>
+                <button *ngIf="!id" class="btn btn-primary" type="submit"> Add Task</button>
+                <button class="btn btn-secondary" (click)="navigateBack()"> Back</button>
+            </div>
+        </form>
+    </div>
+
+</div>
